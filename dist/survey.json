@@ -1,0 +1,4 @@
+[
+	{ "prompt": "test", "options": [{ "content": "1", "count": 0 }, { "content": "2", "count": 0 }] },
+	{ "prompt": "test2", "options": [{ "content": "1", "count": 0 }, { "content": "2", "count": 0 }] }
+]
