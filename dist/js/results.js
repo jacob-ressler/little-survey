@@ -5,8 +5,9 @@ $(document).ready(() => {
 });
 
 function getResults(data) {
-	let str = '<div class="question">';
+	let str = '';
 	data.forEach(item => {
+		str += '<div class="question">';
 		str += '<h2 class="prompt">' + item.prompt + '</h2>';
 
 		// find the total number of responses to this item
@@ -17,15 +18,18 @@ function getResults(data) {
 
 		// loop through again to display the results
 		item.options.forEach(op => {
-			str += '<div class="result"><div class="option">' + op.content + '</div>';
-			str += '<div class="bar"></div>';
-			str += '<p>' + percent(op.count, total) + '% (' + op.count + '/' + total + ')</p></div>';
+			let per = percent(op.count, total);
+			str += '<div class="result"><div class="option">' + op.content;
+			str += '<span> (' + per + '%, ' + op.count + '/' + total + ')</span></div>';
+			str += '<div class="bar" style="width: ' + per + '%"></div></div>';
 		});
+
+		str += '</div>';
 	});
 
 	// close off tags and display the string in 'results.html'
 	str += '</div>';
-	$('.container').html(str);
+	$('#results-container').html(str);
 }
 
 /* The results will be displayed following this general format
