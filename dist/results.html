@@ -4,28 +4,23 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>Results | A Little Survey</title>
+		<link rel="stylesheet" href="css/style.min.css" />
 		<script
-			src="https://code.jquery.com/jquery-3.4.0.js"
-			integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+			src="https://code.jquery.com/jquery-3.4.0.min.js"
+			integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
 			crossorigin="anonymous"
 		></script>
 		<script src="js/results.js"></script>
+		<title>A Little Survey | Results</title>
 	</head>
 	<body>
-		<h1>Results</h1>
+		<!-- Contents of the container are injected by results.js -->
 		<div class="container">
-			<div class="question">
-				<h2 class="prompt">This is a sample.</h2>
-				<div class="result">
-					option 1
-				</div>
-				<div class="result">
-					option 2
-				</div>
+			<h1>Results</h1>
+			<div id="results-container">
+				<div class="loading">Give us a minute while we fetch the results...</div>
 			</div>
+			<div class="link"><a href="index.html">Back to Survey</a></div>
 		</div>
-
-		<a href="index.html">Back to Survey</a>
 	</body>
 </html>
