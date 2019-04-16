@@ -1,5 +1,5 @@
 $(document).ready(() => {
-	$.getJSON('temp.json', function(data) {
+	$.getJSON('survey.json', function (data) {
 		getResults(data);
 	});
 });
@@ -20,7 +20,7 @@ function getResults(data) {
 		item.options.forEach(op => {
 			let perc = percent(op.count, total);
 			str += '<div class="result"><div class="option">' + op.content;
-			str += '<span> (' + per + '%, ' + op.count + '/' + total + ')</span></div>';
+			str += '<span> (' + perc + '%, ' + op.count + '/' + total + ')</span></div>';
 			str += '<div class="bar" style="width: ' + perc + '%"></div></div>';
 		});
 
