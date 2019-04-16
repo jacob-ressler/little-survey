@@ -18,10 +18,10 @@ function getResults(data) {
 
 		// loop through again to display the results
 		item.options.forEach(op => {
-			let per = percent(op.count, total);
+			let perc = percent(op.count, total);
 			str += '<div class="result"><div class="option">' + op.content;
 			str += '<span> (' + per + '%, ' + op.count + '/' + total + ')</span></div>';
-			str += '<div class="bar" style="width: ' + per + '%"></div></div>';
+			str += '<div class="bar" style="width: ' + perc + '%"></div></div>';
 		});
 
 		str += '</div>';
