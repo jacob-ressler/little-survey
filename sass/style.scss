@@ -1,0 +1,100 @@
+* {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+$bg-body: #ddd;
+$bg-content: white;
+$barcolor: #3c9292;
+
+body {
+	background: $bg-body;
+	padding: 0px 10%;
+}
+
+.container {
+	background: $bg-content;
+	min-height: 100vh;
+	box-shadow: 0px 0px 5px dimgrey;
+
+	h1 {
+		text-align: center;
+		font-size: 2em;
+		padding-top: 0.5em;
+		text-transform: capitalize;
+	}
+
+	.link {
+		text-align: center;
+		a {
+			text-decoration: none;
+			color: white;
+			background: $barcolor;
+			padding: 1em 0.7em;
+			border-radius: 10px;
+		}
+		a:hover {
+			background: $barcolor * 0.9;
+		}
+	}
+}
+
+.shared {
+	padding: 5%;
+
+	.loading {
+		text-align: center;
+		font-size: 1.5em;
+		padding: 3em 0;
+	}
+
+	.question {
+		padding: 1em;
+		border-bottom: solid 1px $bg-body;
+
+		.prompt {
+			font-weight: 400;
+		}
+	}
+}
+
+#survey-form {
+	@extend .shared;
+
+	.option-container {
+		display: flex;
+		flex-flow: column;
+
+		div {
+			padding: 3px;
+
+			.radio {
+				margin-right: 5px;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	input[type='submit'] {
+		margin-top: 2em;
+		margin-left: 1em;
+		padding: 10px;
+	}
+}
+
+#results-container {
+	@extend .shared;
+
+	.result {
+		display: flex;
+		flex-flow: column;
+
+		.bar {
+			padding: 5px 0px;
+			margin: 3px 0px 10px 0px;
+			background: $barcolor;
+		}
+	}
+}
