@@ -1,8 +1,18 @@
 $(document).ready(() => {
+	// I was having some issues with the JSON data getting
+	// pulled not having the updated counts from update.php.
+	// By waiting for a little before getting the JSON, hopefully
+	// that problem can be avoided.
+	setTimeout(getSurveyData, 200);
+});
+
+function getSurveyData() {
 	$.getJSON('survey.json', function(data) {
+		console.log(data);
+
 		getResults(data);
 	});
-});
+}
 
 function getResults(data) {
 	// use an array to hold all the width values for the bar divs
