@@ -1,6 +1,6 @@
 function animateBars(widths) {
 	$bars = $('.bar');
-	console.log($bars);
+	//console.log($bars);
 
 	// Animate the widths of the bars
 	for (let i = 0; i < $bars.length; i++) {
