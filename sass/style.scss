@@ -8,19 +8,26 @@
 $bg-body: #ddd;
 $bg-content: white;
 $barcolor: #3c9292;
-$footer-main: white * 0.7;
-$shared-padding: 5%;
+$footer-main: white * 0.7; // footer text color
+
+// These may seem like random values, but they allow the footer to
+// always be anchored to the bottom of the page without
+// blocking other elements (notably the submit button)
+$shared-padding-h: 5%;
+$shared-padding-v: 2em;
 
 body {
+	min-height: 100vh;
 	background: $bg-body;
 	padding: 0px 10%;
 }
 
 .container {
+	position: relative;
 	background: $bg-content;
 	min-height: 100vh;
 	box-shadow: 0px 0px 5px dimgrey;
-	//padding-bottom: 100px;
+	padding-bottom: 83px; // fixed height of footer
 
 	h1 {
 		text-align: center;
@@ -49,7 +56,7 @@ body {
 	}
 
 	.footer {
-		position: relative;
+		position: absolute;
 		width: 100%;
 		bottom: 0;
 		padding: 1em;
@@ -81,7 +88,7 @@ body {
 }
 
 .shared {
-	padding: $shared-padding;
+	padding: $shared-padding-v $shared-padding-h;
 
 	.loading {
 		text-align: center;
@@ -120,13 +127,14 @@ body {
 	input[type='submit'] {
 		margin-top: 2em;
 		margin-left: 1em;
+		margin-bottom: 2em;
 		padding: 10px;
 	}
 }
 
 #results-container {
 	@extend .shared;
-	padding-bottom: $shared-padding * 0.5;
+	padding-bottom: $shared-padding-v * 0.5;
 
 	.result {
 		display: flex;
