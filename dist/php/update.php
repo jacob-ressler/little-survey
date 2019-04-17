@@ -13,8 +13,6 @@
 		foreach ($data[$i]['options'] as $key => $op) {
 			if (array_key_exists('q'.($i+1), $_POST)) {
 				// there is post data for this question
-				echo $_POST['q'.($i+1)].'<br>';
-				echo $op['content'].'<br>';
 				if (strcmp($op['content'], $_POST['q'.($i+1)]) == 0) {
 					// we have a match so update and break
 					$data[$i]['options'][$key]['count']++;
@@ -26,11 +24,11 @@
 
 	// overwrite the json file to reflect the changes and go to the results page
 	file_put_contents('../survey.json', json_encode($data));
-	//goToResults();
+	goToResults();
 
 	// redirect to the results page
 	function goToResults() {
 		header('Location: ../results.html');
-		
+		// Note to self: don't put 'exit' here, because it stops the JSON file from getting updated...
 	}
 ?>
