@@ -22,6 +22,24 @@ body {
 	padding: 0px 10%;
 }
 
+.button-template {
+	text-decoration: none;
+	border: none;
+	outline: none;
+	font-size: 18px;
+	color: white;
+	background: $barcolor;
+	padding: 1em;
+	border-radius: 10px;
+	transition: background 200ms ease;
+
+	&:hover {
+		background: $barcolor * 0.9;
+		transition: background 200ms ease;
+		cursor: pointer;
+	}
+}
+
 .container {
 	position: relative;
 	background: $bg-content;
@@ -36,22 +54,39 @@ body {
 		text-transform: capitalize;
 	}
 
+	p {
+		font-size: 12px;
+		padding: 5px 5%;
+		font-style: italic;
+		text-align: center;
+		color: $bg-content * 0.5;
+
+		b {
+			font-size: 1rem;
+			font-weight: 600;
+			color: red * 0.7;
+		}
+		code {
+			font-weight: 500;
+		}
+	}
+
+	button {
+		@extend .button-template;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 0.5em;
+		margin-top: 15px;
+	}
+
 	.link {
 		text-align: center;
 		padding: 20px;
 		margin-bottom: 1em;
 
 		a {
-			text-decoration: none;
-			color: white;
-			background: $barcolor;
-			padding: 1em 0.7em;
-			border-radius: 10px;
-			transition: background 200ms ease;
-		}
-		a:hover {
-			background: $barcolor * 0.9;
-			transition: background 200ms ease;
+			@extend .button-template;
 		}
 	}
 
@@ -78,11 +113,11 @@ body {
 			text-decoration: none;
 			color: $footer-main;
 			transition: color 200ms ease;
-		}
 
-		a:hover {
-			color: $footer-main * 1.5;
-			transition: color 200ms ease;
+			&:hover {
+				color: $footer-main * 1.5;
+				transition: color 200ms ease;
+			}
 		}
 	}
 }
@@ -115,20 +150,58 @@ body {
 		flex-flow: column;
 
 		div {
-			padding: 3px;
+			display: block;
+			position: relative;
 
 			.radio {
-				margin-right: 5px;
-				vertical-align: middle;
+				// Hide the default radio buttons
+				position: absolute;
+				left: -9999px;
+
+				+ label {
+					display: block;
+					cursor: pointer;
+					width: 100%;
+					padding: 3px;
+
+					&:hover {
+						background: $bg-content * 0.9;
+						border-radius: 5px;
+					}
+				}
+
+				+ label:before {
+					content: '';
+					background: white;
+					border: solid 1px $barcolor;
+					display: block;
+					float: left;
+					width: 1em;
+					height: 1em;
+					border-radius: 50%;
+					margin-top: 2px;
+					margin-right: 10px;
+					text-align: center;
+				}
+
+				&:checked + label:before {
+					background: $barcolor;
+					box-shadow: inset 0 0 0 3px white;
+				}
 			}
 		}
 	}
 
-	input[type='submit'] {
-		margin-top: 2em;
-		margin-left: 1em;
-		margin-bottom: 2em;
-		padding: 10px;
+	.submit {
+		display: grid;
+		grid-template-columns: 1fr;
+		input[type='submit'] {
+			@extend .button-template;
+			font-size: 1.2em;
+			width: 150px;
+			margin: 2em 1em;
+			padding: 10px;
+		}
 	}
 }
 
@@ -151,8 +224,12 @@ body {
 }
 
 // Small screens
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
 	body {
 		padding: 0;
+	}
+
+	input[type='submit'] {
+		justify-self: center;
 	}
 }
