@@ -31,6 +31,6 @@
 	// redirect to the results page
 	function goToResults() {
 		header('Location: ../results.html');
-		exit;
+		
 	}
 ?>
