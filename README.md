@@ -2,10 +2,12 @@
 
 Take the survey and view your results... and the results of everyone else who has taken it.
 
+Try it out [here](http://eecs.csuohio.edu/~jaressle/little-survey/dist/)!
+
 ## Languages Used
 - HTML5
-- [Sass](https://sass-lang.com/) (extension language for writing cleaner CSS)
-- JavaScript (jQuery & vanilla)
+- Sass (extension language for writing cleaner and more compact CSS)
+- JavaScript (mostly jQuery with a little vanilla JS)
 - JSON
 - PHP
 
@@ -20,6 +22,11 @@ Upon loading `results.html`, the `results.js` script will run. This will again p
 ## Regarding usage...
 
 All source code is my own and is free to be used or modified for your own projects as you see fit.
+
+The following external libraries/extensions were used in this project:
+- [jQuery](https://jquery.com/)
+- [FontAwesome](https://fontawesome.com/)
+- [Sass](https://sass-lang.com/)
 
 ## Project Information
 
