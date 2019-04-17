@@ -41,7 +41,7 @@ function createSurvey(data) {
 	}
 
 	// make a submit button
-	str += '<input type="submit" value="Submit">';
+	str += '<div class="submit"><input type="submit" value="Submit"></div>';
 
 	// make str the html content of the form in 'index.html'
 	$('#survey-form').html(str);
