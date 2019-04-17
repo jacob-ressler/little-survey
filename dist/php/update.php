@@ -26,7 +26,7 @@
 
 	// overwrite the json file to reflect the changes and go to the results page
 	file_put_contents('../survey.json', json_encode($data));
-	goToResults();
+	//goToResults();
 
 	// redirect to the results page
 	function goToResults() {
