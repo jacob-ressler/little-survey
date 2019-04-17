@@ -22,9 +22,16 @@
 		<title>A Little Survey | Results</title>
 	</head>
 	<body>
-		<!-- Contents of the container are injected by results.js -->
+		<!-- Additional contents of the container are injected by results.js -->
 		<div class="container">
 			<h1>Results</h1>
+			<p>
+				<b>Sometimes page caching can prevent this page from showing updated results.</b> <br />
+				To make sure you are viewing the most recent results, try using the button below or
+				hard-refreshing this page with
+				<code>Ctrl+F5</code>.
+			</p>
+			<button onclick="getSurveyData()">Reload Results</button>
 			<div id="results-container">
 				<div class="loading">Give us a minute while we fetch the results...</div>
 			</div>
