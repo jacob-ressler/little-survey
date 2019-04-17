@@ -94,7 +94,16 @@ body {
 		.bar {
 			padding: 5px 0px;
 			margin: 3px 0px 10px 0px;
+			// start as white, will be changed for animation
 			background: $barcolor;
+			width: 0%;
 		}
+	}
+}
+
+// Small screens
+@media screen and (max-width: 768px) {
+	body {
+		padding: 0;
 	}
 }

@@ -1,10 +1,14 @@
 $(document).ready(() => {
-	$.getJSON('survey.json', function (data) {
+	$.getJSON('survey.json', function(data) {
 		getResults(data);
 	});
 });
 
 function getResults(data) {
+	// use an array to hold all the width values for the bar divs
+	let widths = [];
+
+	// construct a string from the data to be injected into the html
 	let str = '';
 	data.forEach(item => {
 		str += '<div class="question">';
@@ -21,7 +25,8 @@ function getResults(data) {
 			let perc = percent(op.count, total);
 			str += '<div class="result"><div class="option">' + op.content;
 			str += '<span> (' + perc + '%, ' + op.count + '/' + total + ')</span></div>';
-			str += '<div class="bar" style="width: ' + perc + '%"></div></div>';
+			str += '<div class="bar"></div></div>'; //style="width: ' + perc + '%"
+			widths.push(perc);
 		});
 
 		str += '</div>';
@@ -30,6 +35,8 @@ function getResults(data) {
 	// close off tags and display the string in 'results.html'
 	str += '</div>';
 	$('#results-container').html(str);
+
+	animateBars(widths);
 }
 
 /* The results will be displayed following this general format
@@ -49,5 +56,6 @@ function getResults(data) {
 */
 
 function percent(part, whole) {
+	if (whole == 0) return 0; // handle div by 0
 	return Math.round((part * 100) / whole);
 }
