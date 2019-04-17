@@ -35,7 +35,7 @@ function getResults(data) {
 	// close off tags and display the string in 'results.html'
 	str += '</div>';
 	$('#results-container').html(str);
-
+	addFooter();
 	animateBars(widths);
 }
 

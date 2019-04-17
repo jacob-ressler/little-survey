@@ -45,4 +45,5 @@ function createSurvey(data) {
 
 	// make str the html content of the form in 'index.html'
 	$('#survey-form').html(str);
+	addFooter();
 }
