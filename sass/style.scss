@@ -40,9 +40,11 @@ body {
 			background: $barcolor;
 			padding: 1em 0.7em;
 			border-radius: 10px;
+			transition: background 200ms ease;
 		}
 		a:hover {
 			background: $barcolor * 0.9;
+			transition: background 200ms ease;
 		}
 	}
 
@@ -62,13 +64,18 @@ body {
 			margin-bottom: 5px;
 			a {
 				text-decoration: underline;
-				color: $footer-main;
 			}
 		}
 
 		a {
 			text-decoration: none;
 			color: $footer-main;
+			transition: color 200ms ease;
+		}
+
+		a:hover {
+			color: $footer-main * 1.5;
+			transition: color 200ms ease;
 		}
 	}
 }
