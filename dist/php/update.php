@@ -1,30 +1,37 @@
 <?php
+	echo '<ul><li><a href="../index.html">Survey</a></li><li><a href="../results.html">Results</a></li></ul>';
 	if (empty($_POST)) {
 		// there is no post data (blank survey form was submitted)
 		goToResults();
 	}
-	
-	// first we need to get the json data
-	$data = json_decode(file_get_contents('../survey.json'), true);
+	else {
+		// first we need to get the json data
+		$data = json_decode(file_get_contents('../survey.json'), true);
 
-	// go through each question, update the public results with this user's results
-	for ($i = 0; $i < count($data); $i++) { 
-		// find which option matches the posted results and increment its count
-		foreach ($data[$i]['options'] as $key => $op) {
-			if (array_key_exists('q'.($i+1), $_POST)) {
-				// there is post data for this question
-				if (strcmp($op['content'], $_POST['q'.($i+1)]) == 0) {
-					// we have a match so update and break
-					$data[$i]['options'][$key]['count']++;
-					break;
+		echo "<h1>Updated JSON</h1>";
+		echo file_get_contents('../survey.json');
+
+		// go through each question, update the public results with this user's results
+		for ($i = 0; $i < count($data); $i++) { 
+			// find which option matches the posted results and increment its count
+			foreach ($data[$i]['options'] as $key => $op) {
+				if (array_key_exists('q'.($i+1), $_POST)) {
+					// there is post data for this question
+					if (strcmp($op['content'], $_POST['q'.($i+1)]) == 0) {
+						// we have a match so update and break
+						$data[$i]['options'][$key]['count']++;
+						break;
+					}
 				}
-			}
-		}	
+			}	
+		}
 	}
-
 	// overwrite the json file to reflect the changes and go to the results page
 	file_put_contents('../survey.json', json_encode($data));
-	goToResults();
+	//goToResults();
+
+	echo "<h1>Updated JSON</h1>";
+	echo file_get_contents('../survey.json');
 
 	// redirect to the results page
 	function goToResults() {
