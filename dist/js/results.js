@@ -8,8 +8,6 @@ $(document).ready(() => {
 
 function getSurveyData() {
 	$.getJSON('survey.json', function(data) {
-		console.log(data);
-
 		getResults(data);
 	});
 }
@@ -45,7 +43,12 @@ function getResults(data) {
 	// close off tags and display the string in 'results.html'
 	str += '</div>';
 	$('#results-container').html(str);
-	addFooter();
+
+	if ($('.footer').length == 0) {
+		// we don't have a footer yet so add it in
+		addFooter();
+	}
+
 	animateBars(widths);
 }
 
