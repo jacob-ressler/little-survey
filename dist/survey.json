@@ -26,7 +26,7 @@
 		]
 	},
 	{
-		"prompt": "How do <u>you</u> spell it?",
+		"prompt": "How do you spell it?",
 		"options": [
 			{ "content": "Grey", "count": 2 },
 			{ "content": "Gray", "count": 1 },
