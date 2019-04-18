@@ -40,12 +40,14 @@
 			goToResults();
 		}
 		else {
-			echo '<h1 style="color: red">Error updating data! The file survey.json was not able to be written to.';
-			echo 'This could be due to one or more of many things that I have encountered myself and have been trying to work through:'.
-					 '<ul><li>Grail server decided not to (it seems to just happen randomly without me even changing the code, never had this issue using localhost)</li>'.
+			echo '<h1 style="color: red">Error updating data! The file survey.json was not able to be written to.</h1>';
+			echo '<h3>This could be due to one or more of many things that I have encountered myself and have been trying to work through:'.
+					 '<ul><li>Most likely I forgot to change the permissions in my \'public_html\' folder and contents (for whatever reason, they HAVE to be 0777). '.
+					 'shoot me an <a href="mailto:jressler96@gmail.com">email</a> and I will fix this ASAP</li>'.
+					 '<li>Grail server decided not to (it seems to just happen randomly without me even changing the code, never had this issue using localhost)</li>'.
 					 '<li>Your browser is acting up and may need to be closed and reopened (not just this tab, the entire browser)</li>'.
 					 '<li>There may be some weird stuff happening with page caching that I haven\'t really found a way to get around (sorry)</li></ul>';
-			echo '<br>You can use the top navigation to return to the survey and try again or just give up and go to the un-updated results.';
+			echo '<br>You can use the top navigation to return to the survey and try again or just give up and go to the un-updated results.</h3>';
 		}
 	}
 
