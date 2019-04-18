@@ -8,30 +8,31 @@
 		// first we need to get the json data
 		$data = json_decode(file_get_contents('../survey.json'), true);
 
-		echo "<h1>Updated JSON</h1>";
+		echo "<h1>Old JSON</h1>";
 		echo file_get_contents('../survey.json');
 
 		// go through each question, update the public results with this user's results
 		for ($i = 0; $i < count($data); $i++) { 
 			// find which option matches the posted results and increment its count
-			foreach ($data[$i]['options'] as $key => $op) {
-				if (array_key_exists('q'.($i+1), $_POST)) {
-					// there is post data for this question
-					if (strcmp($op['content'], $_POST['q'.($i+1)]) == 0) {
+			if (array_key_exists('q'.($i+1), $_POST)) {
+				for ($j=0; $j < count($data[$i]['options']); $j++) { 
+					if (strcmp($data[$i]['options'][$j]['content'], $_POST['q'.($i+1)]) == 0) {
 						// we have a match so update and break
-						$data[$i]['options'][$key]['count']++;
+						$data[$i]['options'][$j]['count']++;
 						break;
 					}
 				}
-			}	
+			}
 		}
-	}
-	// overwrite the json file to reflect the changes and go to the results page
+
+			// overwrite the json file to reflect the changes and go to the results page
 	file_put_contents('../survey.json', json_encode($data));
-	//goToResults();
+	goToResults();
 
 	echo "<h1>Updated JSON</h1>";
 	echo file_get_contents('../survey.json');
+	}
+
 
 	// redirect to the results page
 	function goToResults() {
