@@ -1,43 +1,91 @@
 [
-	{
-		"prompt": "How many years have you been at Cleveland State?",
-		"options": [
-			{ "content": "0", "count": 6 },
-			{ "content": "1-2", "count": 3 },
-			{ "content": "3-4", "count": 1 },
-			{ "content": "5+", "count": 2 }
-		]
-	},
-	{
-		"prompt": "Is a hotdog a sandwich?",
-		"options": [
-			{ "content": "Yeah, obviously", "count": 2 },
-			{ "content": "Absolutely not", "count": 1 },
-			{ "content": "What?", "count": 4 }
-		]
-	},
-	{
-		"prompt": "What is your favorite season?",
-		"options": [
-			{ "content": "Spring", "count": 4 },
-			{ "content": "Summer", "count": 1 },
-			{ "content": "Autumn", "count": 3 },
-			{ "content": "Winter", "count": 1 }
-		]
-	},
-	{
-		"prompt": "How do you spell it?",
-		"options": [
-			{ "content": "Grey", "count": 2 },
-			{ "content": "Gray", "count": 1 },
-			{ "content": "Both", "count": 4 }
-		]
-	},
-	{
-		"prompt": "One of my friends puts ketchup on his bacon. Is that weird?",
-		"options": [
-			{ "content": "Extremely", "count": 2 },
-			{ "content": "Sounds delicious!", "count": 1 }
-		]
-	}
+    {
+        "prompt": "How many years have you been at Cleveland State?",
+        "options": [
+            {
+                "content": "0",
+                "count": 7
+            },
+            {
+                "content": "1-2",
+                "count": 3
+            },
+            {
+                "content": "3-4",
+                "count": 1
+            },
+            {
+                "content": "5+",
+                "count": 3
+            }
+        ]
+    },
+    {
+        "prompt": "Is a hotdog a sandwich?",
+        "options": [
+            {
+                "content": "Yeah, obviously",
+                "count": 3
+            },
+            {
+                "content": "Absolutely not",
+                "count": 1
+            },
+            {
+                "content": "What?",
+                "count": 5
+            }
+        ]
+    },
+    {
+        "prompt": "What is your favorite season?",
+        "options": [
+            {
+                "content": "Spring",
+                "count": 4
+            },
+            {
+                "content": "Summer",
+                "count": 1
+            },
+            {
+                "content": "Autumn",
+                "count": 4
+            },
+            {
+                "content": "Winter",
+                "count": 2
+            }
+        ]
+    },
+    {
+        "prompt": "How do you spell it?",
+        "options": [
+            {
+                "content": "Grey",
+                "count": 2
+            },
+            {
+                "content": "Gray",
+                "count": 2
+            },
+            {
+                "content": "Both",
+                "count": 5
+            }
+        ]
+    },
+    {
+        "prompt": "One of my friends puts ketchup on his bacon. Is that weird?",
+        "options": [
+            {
+                "content": "Extremely",
+                "count": 3
+            },
+            {
+                "content": "Sounds delicious!",
+                "count": 3
+            }
+        ]
+    }
 ]
