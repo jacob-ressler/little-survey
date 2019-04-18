@@ -11,6 +11,7 @@ The following have not been able to be fixed, despite my best efforts, or have y
 - **First survey submission of session is not always reflected in results**
   - First survey submission in a browsing session sometimes is not reflected in the results page, despite `survey.json` updating successfully.
   - This can be remedied by reloading the results with the aptly named Reload Results button.
+  - If that doesn't work, try hard-refreshing the browser with `Ctrl+F5`.
 - **`update.php` sometimes fails to write to `survey.json`**
   - This can happen for a bunch of reasons and I have done the best I can to stop them all from happening.
   - If it does happen to you an error message will pop up and give a few reasons why this could have happened and some potential solutions I found.
