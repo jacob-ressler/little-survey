@@ -25,20 +25,26 @@
 			}
 		}
 
-			// overwrite the json file to reflect the changes and go to the results page
+		// overwrite the json file to reflect the changes and go to the results page
 
-	if (file_put_contents('../survey.json', json_encode($data, JSON_PRETTY_PRINT))) {
-		echo '<h1 style="color: red">Data successfully updated!';
-	}
-	else {
-		echo '<h1 style="color: red">Error updating data!';
-	}
-	
+			
+		/* create a stream context telling PHP to overwrite the file */ 
+		$options = array('ftp' => array('overwrite' => true)); 
+		$stream = stream_context_create($options); 
 
-	echo "<h1>Updated JSON</h1>";
-	echo file_get_contents('../survey.json');
+		/* and finally, put the contents */
+		if (file_put_contents('../survey.json', json_encode($data, JSON_PRETTY_PRINT), 0, $stream)) {
+			echo '<h1 style="color: red">Data successfully updated!';
+		}
+		else {
+			echo '<h1 style="color: red">Error updating data!';
+		}
+			
 
-	//goToResults();
+		echo "<h1>Updated JSON</h1>";
+		echo file_get_contents('../survey.json');
+
+		//goToResults();
 	}
 
 
