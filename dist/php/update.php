@@ -26,7 +26,13 @@
 		}
 
 			// overwrite the json file to reflect the changes and go to the results page
-	file_put_contents('../survey.json', json_encode($data));
+
+	if (file_put_contents('../survey.json', json_encode($data, JSON_PRETTY_PRINT))) {
+		echo '<h1 style="color: red">Data successfully updated!';
+	}
+	else {
+		echo '<h1 style="color: red">Error updating data!';
+	}
 	
 
 	echo "<h1>Updated JSON</h1>";
