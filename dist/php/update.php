@@ -27,10 +27,12 @@
 
 			// overwrite the json file to reflect the changes and go to the results page
 	file_put_contents('../survey.json', json_encode($data));
-	goToResults();
+	
 
 	echo "<h1>Updated JSON</h1>";
 	echo file_get_contents('../survey.json');
+
+	//goToResults();
 	}
 
 
