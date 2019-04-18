@@ -7,7 +7,10 @@ $(document).ready(() => {
 });
 
 function getSurveyData() {
-	$.getJSON('survey.json', function(data) {
+	// the current time URL paremeter is meant to prevent browser caching
+	// if the cached survey.json is used, it will not reflect the actual
+	// current results, but whatever results have been cached by the browser.
+	$.getJSON('survey.json?' + new Date().getTime(), function (data) {
 		getResults(data);
 	});
 }

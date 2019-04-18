@@ -1,5 +1,6 @@
-$(document).ready(function() {
-	$.getJSON('survey.json', function(data) {
+$(document).ready(function () {
+	// Prevent browser caching by using the current time as a URL parameter
+	$.getJSON('survey.json?' + new Date().getTime(), function (data) {
 		createSurvey(data);
 	});
 });
